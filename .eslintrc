@@ -1,8 +1,0 @@
-{
-    "extends": ["react-app", "react-app/jest", "prettier"],
-    "rules": {
-        "prefer-const": "error",
-        "quotes": ["error", "single"],
-        "jsx-quotes": ["error", "single"]
-    }
-}
