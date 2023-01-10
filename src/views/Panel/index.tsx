@@ -1,4 +1,4 @@
-import styles from './Panel.module.scss'
+import styles from './Panel.module.scss';
 
 const Panel = () => {
     return (
@@ -9,13 +9,14 @@ const Panel = () => {
                 <a className={`${styles.sidebarBrand}`}>WildBerries</a>
                 <hr className={styles.sidebarDivider} />
                 <li className={styles.navItem}>
-                    <a className={`${styles.navLink} ${styles.navItem}`}>
+                    <a className={styles.navLink}>
+                        <i className='fas fa-fw fa-tachometer-alt' />
                         Dashboard
                     </a>
                 </li>
             </ul>
         </>
-    )
+  )
 }
 
 export default Panel

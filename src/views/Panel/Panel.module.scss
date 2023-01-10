@@ -13,7 +13,7 @@
     background-size: cover;
 }
 .sidebar {
-    width: 13.5rem;
+    width: 14rem;
     min-height: 100vh;
 }
 
@@ -42,7 +42,14 @@
 }
 
 .navItem {
-    color: #fff;
-    font-weight: 700;
     font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: .5rem ;
+}
+
+.navItem:hover{
+    background: #899ace;
+    transition: all .5s;
+    cursor: pointer;
 }
