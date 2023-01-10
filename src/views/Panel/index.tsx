@@ -9,7 +9,9 @@ const Panel = () => {
                 <a className={`${styles.sidebarBrand}`}>WildBerries</a>
                 <hr className={styles.sidebarDivider} />
                 <li className={styles.navItem}>
-                    <a className={`${styles.navLink} ${styles.navItem}`}>Dashboard</a>
+                    <a className={`${styles.navLink} ${styles.navItem}`}>
+                        Dashboard
+                    </a>
                 </li>
             </ul>
         </>
