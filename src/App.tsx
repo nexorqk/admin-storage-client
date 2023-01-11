@@ -1,9 +1,9 @@
-import './App.css'
-import Admin from './views/Admin'
+import React from 'react'
+import { Admin } from 'views'
 
-function App() {
+const App = () => {
     return (
-        <div className='App'>
+        <div>
             <Admin />
         </div>
     )
