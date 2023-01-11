@@ -1,0 +1,17 @@
+.cardWrapper {
+    width: 100%;
+}
+
+.panel {
+    width: 80%;
+    margin: 10px;
+}
+
+.card {
+    display: flex;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}

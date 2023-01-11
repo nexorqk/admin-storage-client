@@ -14,12 +14,3 @@ code {
         monospace;
 }
 
-a {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    text-decoration: none;
-    color: aqua;
-}
