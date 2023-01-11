@@ -1,11 +1,9 @@
 import React from 'react'
 import { Admin } from 'views'
 
-import 'App.css'
-
 const App = () => {
     return (
-        <div className='App'>
+        <div>
             <Admin />
         </div>
     )
