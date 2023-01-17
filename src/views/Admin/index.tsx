@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card, CardPanel, List } from 'components'
-import { Panel } from 'views'
+import { Panel, Stocks } from 'views'
+import { Routes, Route } from 'react-router-dom'
 
 import styles from './Admin.module.scss'
+import Table from 'components/Table'
 
 const data = [
     'Roses are red',
@@ -14,13 +15,19 @@ const data = [
 const Admin = () => {
     const title = 'PURECO: Кошачий наполнитель'
     return (
-        <div className={styles.wrapper}>
-            <Panel />
-            <CardPanel title='PURECO Кошачий наполнитель'>
-                <Card title={title} />
-                <List data={data} className={styles.list} />
-            </CardPanel>
-        </div>
+        <>
+            <div className={styles.wrapper}>
+                <Panel />
+                <Routes>
+                    <Route path='/' element={<></>} />
+                    <Route path='/stocks' element={<Stocks />} />
+                    {/* <CardPanel title={title}>
+                                <Card title={title} />
+                                <List data={data} className={styles.list} />
+                            </CardPanel> */}
+                </Routes>
+            </div>
+        </>
     )
 }
 

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTachometer } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './Panel.module.scss'
+import { Link } from 'react-router-dom'
 
 const Panel = () => {
     const tachometerIcon = <FontAwesomeIcon icon={faTachometer} />
@@ -14,10 +15,14 @@ const Panel = () => {
                 <a className={`${styles.sidebarBrand}`}>WildBerries</a>
                 <hr className={styles.sidebarDivider} />
                 <li className={styles.navItem}>
-                    <a className={styles.navLink}>
+                    <Link to='/' className={styles.navLink}>
                         <i>{tachometerIcon}</i>
-                        Dashboard
-                    </a>
+                        Статистика
+                    </Link>
+                    <Link to='stocks' className={styles.navLink}>
+                        <i>{tachometerIcon}</i>
+                        Товары
+                    </Link>
                 </li>
             </ul>
         </>
