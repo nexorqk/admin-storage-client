@@ -1,81 +1,94 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable spaced-comment */
-import React, { FC, useMemo, useState } from 'react'
-// eslint-disable-next-line camelcase
-import MaterialReactTable, { MRT_Cell, MRT_ColumnDef } from 'material-react-table'
-import { citiesList, data, Person, usStateList } from './makeData'
+import React, { useMemo, useState } from 'react'
+import MaterialReactTable, {
+    MaterialReactTableProps,
+    MRT_ColumnDef as mrtColumnDef,
+} from 'material-react-table'
+import { Button } from '@mui/material'
+import { data, Person, tableProps } from './types'
 
-const Example: FC = () => {
-    // eslint-disable-next-line camelcase
-    const columns = useMemo<MRT_ColumnDef<Person>[]>(
+const Table = () => {
+    const sendEmail = (row: any) => {
+        console.log('click', row)
+    }
+
+    const columns = useMemo<mrtColumnDef<Person>[]>(
         () => [
             {
-                header: 'Account Status',
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                accessorFn: (originalRow: any) =>
-                    originalRow.isActive ? 'true' : 'false',
-                id: 'isActive',
-                filterVariant: 'checkbox',
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                Cell: ({ cell }: any) =>
-                    cell.getValue() === 'true' ? 'Active' : 'Inactive',
-                size: 220,
-            },
-            {
                 accessorKey: 'name',
-                header: 'Name',
-                filterVariant: 'text', // default
+                header: 'Наименование',
+                size: 300,
+                // default
+                filterVariant: 'text', 
             },
             {
-                accessorKey: 'age',
-                header: 'Age',
-                filterVariant: 'range',
-                filterFn: 'betweenInclusive', // use betweenInclusive instead of between
+                accessorKey: 'code',
+                header: 'Код',
+                filterVariant: 'text',
+                size: 30,
             },
             {
                 accessorKey: 'city',
-                header: 'City',
-                filterVariant: 'select',
-                filterSelectOptions: citiesList,
+                header: 'Артикул',
+                size: 50,
+                filterVariant: 'text',
             },
             {
                 accessorKey: 'state',
-                header: 'State',
-                filterVariant: 'multi-select',
-                filterSelectOptions: usStateList,
+                header: 'Ед. изм.',
+                filterVariant: 'text',
+                size: 50,
+            },
+            {
+                accessorKey: 'priceFinish',
+                header: 'Цена продажи',
+                size: 40,
+                filterVariant: 'text',
+            },
+            {
+                accessorKey: 'btn',
+                header: '',
+                size: 40,
+                font: '1.2rem',
+                columnDefType: 'display',
+                Cell: ({ row }: any): React.ReactNode => (
+                    <Button onClick={() => sendEmail(row)}>Подробнее</Button>
+                ),
             },
         ],
         []
     )
 
-    const [tableData, setTableData] = useState<Person[]>(() => data);
+    const [tableData, setTableData] = useState<Person[]>(() => data)
 
-    // eslint-disable-next-line camelcase
-    const handleSaveCell = (cell: MRT_Cell<Person>, value: any) => {
-        //if using flat data and simple accessorKeys/ids, you can just do a simple assignment here
-        //@ts-ignore
-        tableData[cell.row.index][cell.column.id as keyof Person] = value
-        //send/receive api updates here
-        setTableData([...tableData]) //re-render with new data
-    }
+    const handleSaveRow: MaterialReactTableProps<Person>['onEditingRowSave'] =
+        async ({ exitEditingMode, row, values }) => {
+            // if using flat data and simple accessorKeys/ids, you can just do a simple assignment here.
+            tableData[row.index] = values
+
+            // send/receive api updates here
+            setTableData([...tableData])
+            exitEditingMode() // required to exit editing mode
+        }
 
     return (
         <MaterialReactTable
+            {...tableProps}
             columns={columns}
             data={data}
-            rowCount={30}
             initialState={{ showColumnFilters: true }}
-            editingMode='table'
-            enableEditing
-            muiTableBodyCellEditTextFieldProps={({ cell }) => ({
-                //onBlur is more efficient, but could use onChange instead
-                onBlur: (event) => {
-                    handleSaveCell(cell, event.target.value)
+            editingMode='row'
+            displayColumnDefOptions={{
+                'mrt-row-actions': {
+                    size: 100,
+                    muiTableHeadCellProps: {
+                        align: 'center',
+                    },
+                    header: '',
                 },
-                variant: 'outlined',
-            })}
+            }}
+            onEditingRowSave={handleSaveRow}
         />
     )
 }
 
-export default Example
+export default Table
