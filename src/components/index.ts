@@ -1,7 +1,7 @@
 import Card from './Card'
 import CardPanel from './CardPanel'
 import List from './List'
-import Table from './Table';
+import ModalComponent from './Modal'
+import Table from './Table'
 
-
-export { Card, CardPanel, List, Table }
+export { Card, CardPanel, List, Table, ModalComponent }

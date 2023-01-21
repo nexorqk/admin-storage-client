@@ -1,8 +1,6 @@
 import React from 'react'
 import { Panel, List as ListDefault } from 'rsuite'
 
-import styles from 'List.module.scss'
-
 interface Props {
     data: string[]
 	className: string
