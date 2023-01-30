@@ -34,12 +34,18 @@ const Table = () => {
             },
             {
                 accessorKey: 'state',
-                header: 'Ед. изм.',
+                header: 'Остатки',
                 filterVariant: 'text',
                 size: 50,
             },
             {
-                accessorKey: 'priceFinish',
+                accessorKey: 'priceSpend',
+                header: 'Цена закупки',
+                size: 40,
+                filterVariant: 'text',
+            },
+            {
+                accessorKey: 'priceBuy',
                 header: 'Цена продажи',
                 size: 40,
                 filterVariant: 'text',

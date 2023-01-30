@@ -21,5 +21,6 @@ export const makeRequest = async ({
         data,
         headers,
         params,
+        withCredentials: false,
     } as IMakeRequest)
 }

@@ -1,6 +1,7 @@
 export type Person = {
     name: string
-    priceFinish: string
+    priceSpend: string
+    priceBuy: string
     code: number
     city: string
     state: string
@@ -13,7 +14,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
     {
@@ -21,7 +23,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
     {
@@ -29,7 +32,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
     {
@@ -37,7 +41,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
     {
@@ -45,7 +50,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
     {
@@ -53,7 +59,8 @@ export const data = [
         code: 42,
         city: 'San Francisco',
         state: 'California',
-        priceFinish: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
         btn: '',
     },
 ]

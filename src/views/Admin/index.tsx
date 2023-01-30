@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import styles from './Admin.module.scss'
 
 const Admin = () => {
-    // const title = 'PURECO: Кошачий наполнитель'
+    
     return (
         <>
             <div className={styles.wrapper}>
@@ -13,10 +13,6 @@ const Admin = () => {
                 <Routes>
                     <Route path='/' element={<></>} />
                     <Route path='/stocks' element={<Stocks />} />
-                    {/* <CardPanel title={title}>
-                                <Card title={title} />
-                                <List data={data} className={styles.list} />
-                            </CardPanel> */}
                 </Routes>
             </div>
         </>
