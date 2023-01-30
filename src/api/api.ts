@@ -5,7 +5,7 @@ const url = 'http://localhost:3005/store/api'
 
 export const getWBlist = async () => {
     const { data } = await makeRequest({
-        url: `${url}`,
+        url: `${url}/stocks`,
         method: RequestEnum.GET,
     })
 

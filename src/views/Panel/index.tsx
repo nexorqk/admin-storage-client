@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTachometer } from '@fortawesome/free-solid-svg-icons'
+import { faTachometer, faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './Panel.module.scss'
-import { Link } from 'react-router-dom'
 
 const Panel = () => {
     const tachometerIcon = <FontAwesomeIcon icon={faTachometer} />
+    const basketShopping = <FontAwesomeIcon icon={faBasketShopping} />
     return (
         <>
             <ul
@@ -20,7 +21,7 @@ const Panel = () => {
                         Статистика
                     </Link>
                     <Link to='stocks' className={styles.navLink}>
-                        <i>{tachometerIcon}</i>
+                        <i>{basketShopping}</i>
                         Товары
                     </Link>
                 </li>

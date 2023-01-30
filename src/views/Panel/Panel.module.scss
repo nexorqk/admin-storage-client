@@ -42,7 +42,7 @@
     display: block;
     text-align: left;
     padding: 1rem;
-    color: #fff;
+    color: #fff!important;
     i {
         padding: 10px;
     }
@@ -51,8 +51,8 @@
         display: block;
         text-align: left;
         padding: 1rem;
-        color: #fff;
-        text-decoration: none;
+        color: #fff!important;
+        text-decoration: none!important;
     }
 }
 
