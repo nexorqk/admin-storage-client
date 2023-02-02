@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button,
+input[type='submit'] {
+    background: #2589f5;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+input:disabled {
+    opacity: 0.4;
+}

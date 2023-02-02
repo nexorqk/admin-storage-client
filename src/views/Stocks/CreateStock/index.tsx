@@ -1,5 +1,6 @@
 import React from 'react'
 import { ModalComponent } from 'components'
+import CreateStockForm from './CreateStockForm'
 
 interface CreateStockProps {
     open: boolean
@@ -9,7 +10,7 @@ interface CreateStockProps {
 const CreateStock = ({ open, close }: CreateStockProps) => {
     return (
         <ModalComponent open={open} close={close}>
-            <div>CreateStock</div>
+            <CreateStockForm />
         </ModalComponent>
     )
 }
