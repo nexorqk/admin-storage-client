@@ -11,6 +11,7 @@ const Admin = () => {
                 <Panel />
                 <Routes>
                     <Route path='/stocks' element={<Stocks />} />
+                    <Route path='/stock' element={<Stocks />} />
                 </Routes>
             </div>
         </>
