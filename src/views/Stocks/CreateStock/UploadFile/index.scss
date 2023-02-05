@@ -1,0 +1,19 @@
+.upload-container {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.upload-button {
+    margin-right: 1rem;
+}
+
+.cross-btn {
+    button {
+        padding: 0;
+    }
+}
+
+.upload-block{
+    display: flex;
+    flex-direction: column;
+}

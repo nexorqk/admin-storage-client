@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React, { useRef } from 'react'
 import { ModalComponent } from 'components'
 import CreateStockForm from './CreateStockForm'
 
@@ -8,9 +9,10 @@ interface CreateStockProps {
 }
 
 const CreateStock = ({ open, close }: CreateStockProps) => {
+    const submitRef = useRef()
     return (
-        <ModalComponent open={open} close={close}>
-            <CreateStockForm />
+        <ModalComponent submitRef={submitRef} open={open} close={close}>
+            <CreateStockForm submitRef={submitRef} />
         </ModalComponent>
     )
 }

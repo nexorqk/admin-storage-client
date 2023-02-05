@@ -16,22 +16,18 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "@typescript-eslint",
-        "prettier"
-    ],
+    "plugins": ["@typescript-eslint", "@typescript-eslint", "prettier"],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "camelcase": "error",
-        "spaced-comment": "error",
+        "spaced-comment": "warn",
         "quotes": ["error", "single"],
         "no-duplicate-imports": "error",
         "no-console": "off",
         "prefer-const": "error",
         "jsx-quotes": ["error", "prefer-single"],
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
     },
     "settings": {
         "import/resolver": {

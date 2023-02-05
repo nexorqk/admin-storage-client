@@ -7,9 +7,9 @@ const Input = (props: TextFieldProps) => {
         <TextField
             {...props}
             id='outlined-basic'
-            label='firstName'
             variant='outlined'
             className='input'
+            size='small'
         />
     )
 }
