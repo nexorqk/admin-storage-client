@@ -16,7 +16,12 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "@typescript-eslint", "prettier"],
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "@typescript-eslint",
+        "prettier"
+    ],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "camelcase": "error",
