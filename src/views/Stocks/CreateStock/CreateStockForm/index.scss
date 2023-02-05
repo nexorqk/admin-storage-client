@@ -1,10 +1,26 @@
-form {
+.container-form {
     display: flex;
     flex-direction: column;
+    width: 39%;
+    
+
+    .input{
+        margin-bottom: 1rem;
+    }
+}
+
+.container{
+    display: flex;
+    padding-top: 1rem;
+}
+
+.container-tabs{
+    margin-left: 1rem;
 }
 
 button,
 input[type='submit'] {
+    display: none;
     background: #2589f5;
     color: white;
     text-transform: uppercase;
