@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import Table from 'components/Table'
-import { Button } from '@mui/material'
+import { Button, ButtonBase } from '@mui/material'
 import styles from './Stocks.module.scss'
 import CreateStock from './CreateStock'
 import CreateGroup from './CreateGroup'
 import { getWBlist } from 'api/api'
+import { Link } from 'react-router-dom'
 
 const Stocks = () => {
     const [openStock, setOpenStock] = React.useState(false)
@@ -23,7 +24,7 @@ const Stocks = () => {
             return data
         }
         getCardData()
-    },[])
+    }, [])
 
     return (
         <div className={styles.wrapper}>
@@ -50,6 +51,11 @@ const Stocks = () => {
                     </Button>
                 </div>
             </div>
+            <ButtonBase>
+                <Link className={styles.stockLink} to='/stock'>
+                    Карточка товара
+                </Link>
+            </ButtonBase>
             <Table />
         </div>
     )

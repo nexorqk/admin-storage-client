@@ -1,6 +1,13 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Admin, Login, RecoveryPassword, SignUp, Stocks } from 'views'
+import {
+    Admin,
+    Login,
+    RecoveryPassword,
+    SignUp,
+    Stocks,
+    StocksFormPage,
+} from 'views'
 
 const App = () => {
     return (
@@ -11,7 +18,7 @@ const App = () => {
                 <Route path='/recovery' element={<RecoveryPassword />} />
                 <Route path='/' element={<Admin />}>
                     <Route path='stocks' element={<Stocks />} />
-                    <Route path='stock' element={<Stocks />} />
+                    <Route path='stock' element={<StocksFormPage />} />
                 </Route>
             </Routes>
         </div>
