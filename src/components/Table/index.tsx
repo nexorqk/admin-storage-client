@@ -5,10 +5,11 @@ import MaterialReactTable, {
 } from 'material-react-table'
 import { Button } from '@mui/material'
 import { data, Person, tableProps } from './types'
+import { Link, useParams } from 'react-router-dom'
 
 const Table = () => {
-    const sendEmail = (row: any) => {
-        console.log('click', row)
+    const sendEmail = ({ idProduct }: any) => {
+        console.log('click', idProduct)
     }
 
     const columns = useMemo<mrtColumnDef<Person>[]>(
@@ -18,7 +19,7 @@ const Table = () => {
                 header: 'Наименование',
                 size: 300,
                 // default
-                filterVariant: 'text', 
+                filterVariant: 'text',
             },
             {
                 accessorKey: 'code',
@@ -57,7 +58,12 @@ const Table = () => {
                 font: '1.2rem',
                 columnDefType: 'display',
                 Cell: ({ row }: any): React.ReactNode => (
-                    <Button onClick={() => sendEmail(row)}>Подробнее</Button>
+                    <Link
+                        to={`/stock/${row.original.idProduct}`}
+                        onClick={(e) => sendEmail(row.original)}
+                    >
+                        Подробнее
+                    </Link>
                 ),
             },
         ],
@@ -83,6 +89,7 @@ const Table = () => {
             data={data}
             initialState={{ showColumnFilters: true }}
             editingMode='row'
+            
             displayColumnDefOptions={{
                 'mrt-row-actions': {
                     size: 100,

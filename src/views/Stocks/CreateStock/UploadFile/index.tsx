@@ -13,6 +13,12 @@ const UploadFile = () => {
         }
     }, [selectedImage])
 
+    const imageSize =
+        selectedImage &&
+        `${selectedImage?.name.slice(0, 7)}..${selectedImage?.name.substring(
+            selectedImage?.name.length - 4
+        )}`
+
     return (
         <div className='upload-container'>
             <div className='upload-button'>
@@ -35,15 +41,7 @@ const UploadFile = () => {
                         </Button>
                     </label>
                     <div>
-                        <p>
-                            Name:{' '}
-                            {`${selectedImage?.name.slice(
-                                0,
-                                7
-                            )}..${selectedImage?.name.substring(
-                                selectedImage?.name.length - 4
-                            )}`}
-                        </p>
+                        <p>Name:{imageSize}</p>
                         <p>Size: {selectedImage?.size}</p>
                     </div>
                 </div>

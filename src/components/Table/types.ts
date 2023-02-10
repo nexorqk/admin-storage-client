@@ -6,6 +6,7 @@ export type Person = {
     city: string
     state: string
     btn?: string
+    idProduct: string
 }
 
 export const data = [
@@ -17,6 +18,7 @@ export const data = [
         priceBuy: 'California',
         priceSpend: 'California',
         btn: '',
+        idProduct: '1',
     },
     {
         name: 'Tanner Linsley',
@@ -26,6 +28,7 @@ export const data = [
         priceBuy: 'California',
         priceSpend: 'California',
         btn: '',
+        idProduct: '2',
     },
     {
         name: 'Tanner Linsley',
@@ -35,6 +38,17 @@ export const data = [
         priceBuy: 'California',
         priceSpend: 'California',
         btn: '',
+        idProduct: '3',
+    },
+    {
+        name: 'Tanner Linsley',
+        code: 42,
+        city: 'San Francisco',
+        state: 'California',
+        priceBuy: 'California',
+        priceSpend: 'California',
+        btn: '',        
+        idProduct: '4',
     },
     {
         name: 'Tanner Linsley',
@@ -44,6 +58,7 @@ export const data = [
         priceBuy: 'California',
         priceSpend: 'California',
         btn: '',
+        idProduct: '5',
     },
     {
         name: 'Tanner Linsley',
@@ -53,15 +68,7 @@ export const data = [
         priceBuy: 'California',
         priceSpend: 'California',
         btn: '',
-    },
-    {
-        name: 'Tanner Linsley',
-        code: 42,
-        city: 'San Francisco',
-        state: 'California',
-        priceBuy: 'California',
-        priceSpend: 'California',
-        btn: '',
+        idProduct: '5',
     },
 ]
 

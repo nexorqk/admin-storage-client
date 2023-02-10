@@ -11,7 +11,7 @@ const App = () => {
                 <Route path='/recovery' element={<RecoveryPassword />} />
                 <Route path='/' element={<Admin />}>
                     <Route path='stocks' element={<Stocks />} />
-                    <Route path='stock' element={<Stocks />} />
+                    <Route path='stock/:id' element={<Stocks />} />
                 </Route>
             </Routes>
         </div>

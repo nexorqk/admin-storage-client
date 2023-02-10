@@ -5,6 +5,7 @@ import styles from './Stocks.module.scss'
 import CreateStock from './CreateStock'
 import CreateGroup from './CreateGroup'
 import { getWBlist } from 'api/api'
+// import { useParams } from 'react-router-dom'
 
 const Stocks = () => {
     const [openStock, setOpenStock] = React.useState(false)
@@ -15,6 +16,9 @@ const Stocks = () => {
 
     const handleOpenGroup = () => setOpenGroup(true)
     const handleCloseGroup = () => setOpenGroup(false)
+
+    // const { id } = useParams()
+    // console.log('id',id)
 
     useEffect(() => {
         const getCardData = async () => {
