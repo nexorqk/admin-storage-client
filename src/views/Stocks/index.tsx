@@ -26,32 +26,32 @@ const Stocks = () => {
     },[])
 
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.nav}>
-                <div className={styles.navBlockLeft}>
-                    <Button variant='outlined' onClick={handleOpenStock}>
-                        Товары
-                    </Button>
+            <div className={styles.wrapper}>
+                <div className={styles.nav}>
+                    <div className={styles.navBlockLeft}>
+                        <Button variant='outlined' onClick={handleOpenStock}>
+                            Товары
+                        </Button>
                     <CreateStock open={openStock} close={handleCloseStock} />
-                    <Button variant='outlined' onClick={handleOpenGroup}>
-                        Группы
-                    </Button>
+                        <Button variant='outlined' onClick={handleOpenGroup}>
+                            Группы
+                        </Button>
                     <CreateGroup open={openGroup} close={handleCloseGroup} />
-                    <Button variant='outlined' disabled>
-                        Фильтр
-                    </Button>
+                        <Button variant='outlined' disabled>
+                            Фильтр
+                        </Button>
+                    </div>
+                    <div className={styles.navBlockRight}>
+                        <Button variant='outlined' disabled>
+                            Импорт
+                        </Button>
+                        <Button variant='outlined' disabled>
+                            Экспорт
+                        </Button>
+                    </div>
                 </div>
-                <div className={styles.navBlockRight}>
-                    <Button variant='outlined' disabled>
-                        Импорт
-                    </Button>
-                    <Button variant='outlined' disabled>
-                        Экспорт
-                    </Button>
-                </div>
+                <Table />
             </div>
-            <Table />
-        </div>
     )
 }
 
