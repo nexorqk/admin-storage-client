@@ -17,20 +17,19 @@ const Table = () => {
             {
                 accessorKey: 'name',
                 header: 'Наименование',
-                size: 300,
-                // default
+                size: 220,
                 filterVariant: 'text',
             },
             {
                 accessorKey: 'code',
                 header: 'Код',
                 filterVariant: 'text',
-                size: 30,
+                size: 40,
             },
             {
                 accessorKey: 'city',
                 header: 'Артикул',
-                size: 50,
+                size: 40,
                 filterVariant: 'text',
             },
             {
@@ -82,6 +81,11 @@ const Table = () => {
             exitEditingMode() // required to exit editing mode
         }
 
+    const [rowNumber, setRowNumber] = useState({pageSize: 10, pageIndex: 0})
+
+    console.log(rowNumber);
+    
+
     return (
         <MaterialReactTable
             {...tableProps}
@@ -89,10 +93,11 @@ const Table = () => {
             data={data}
             initialState={{ showColumnFilters: true }}
             editingMode='row'
-            
+            enableRowSelection
+            onPaginationChange={setRowNumber}
             displayColumnDefOptions={{
                 'mrt-row-actions': {
-                    size: 100,
+                    size: 30,
                     muiTableHeadCellProps: {
                         align: 'center',
                     },
